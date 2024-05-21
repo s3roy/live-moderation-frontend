@@ -1,6 +1,13 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import React from 'react';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+import { AppProps } from 'next/app';
+import { CSSReset, ChakraProvider } from '@chakra-ui/react';
+function App({ Component, pageProps }: AppProps): React.ReactNode {
+  return (
+    <ChakraProvider>
+      <CSSReset />
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
 }
+export default App;
